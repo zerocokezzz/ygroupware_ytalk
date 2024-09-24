@@ -20,7 +20,7 @@
 
 ## 기술 스택
 
-<img src="![java](https://github.com/user-attachments/assets/6d6b94d4-0081-4590-b95d-b82505fb6f70)">
+<img width="80%" src="![java](https://github.com/user-attachments/assets/6d6b94d4-0081-4590-b95d-b82505fb6f70)"/>
 
 <img src="![springboot.jpg](https://prod-files-secure.s3.us-west-2.amazonaws.com/8404a52b-c953-4172-a95f-8296b68f0606/fd4279fd-95e8-4706-981a-1b162e76d696/springboot.jpg)">
 
