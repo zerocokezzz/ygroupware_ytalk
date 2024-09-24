@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="">
+<!-- head -->
+<head>
+  <title>Create</title>
+  <th:block th:replace="~{fragments/head.html :: fragment-head}"></th:block>
+</head>
+
+<body>
+
+<main>
+  <div class="container">
+
+    <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
+
+            <div class="d-flex justify-content-center py-4">
+              <a href="../index.html" class="logo d-flex align-items-center w-auto">
+                <img th:src="@{../assets/img/logo.png}" alt="">
+                <span class="d-none d-lg-block">YGroupWare</span>
+              </a>
+            </div><!-- End Logo -->
+
+            <div class="card mb-3">
+
+              <div class="card-body">
+
+                <div class="pt-4 pb-2">
+                  <h5 class="card-title text-center pb-0 fs-4">회원가입</h5>
+                  <p class="text-center small">계정을 만들려면 개인 정보를 입력하세요</p>
+                </div>
+
+                <form class="row g-3 needs-validation" method="post" action="/non-member/pages-register" novalidate>
+                  <!-- 이름 입력 필드 -->
+                  <div class="col-12">
+                    <label for="yourName" class="form-label">이름</label>
+                    <div class="input-group">
+                      <input type="text" name="name" class="form-control" id="yourName" required>
+                      <button class="btn btn-outline-secondary" type="button" onclick="validateName()">v</button>
+                      <div class="invalid-feedback">이름을 입력해주세요!</div>
+                    </div>
+                    <small id="nameValidationMsg" class="text-danger"></small>
+                  </div>
+
+                  <div class="col-12">
+                    <label class="form-label">이메일</label>
+                    <div class="input-group has-validation">
+                      <input name="emailAccount" class="form-control" id="emailAccount" aria-label="Email" th:value="${member?.emailAccount}" required>
+                      <span class="input-group-text" id="inputGroupPrepend">@</span>
+                      <label for="emailDomain"></label><select name="emailDomain" class="form-select" id="emailDomain" required>
+                      <option type="text" value="gmail.com" th:selected="${member?.emailDomain == 'gmail.com'}">gmail.com</option>
+                      <option type="text" value="naver.com" th:selected="${member?.emailDomain == 'naver.com'}">naver.com</option>
+                      <option type="text" value="nate.com" th:selected="${member?.emailDomain == 'nate.com'}">nate.com</option>
+                      <option type="text" value="daum.net" th:selected="${member?.emailDomain == 'daum.net'}">daum.net</option>
+                      <option type="text" value="hanmail.net" th:selected="${member?.emailDomain == 'hanmail.net'}">hanmail.net</option>
+                      <option type="text" value="custom">직접 입력</option>
+                    </select>
+                      <!-- 직접 입력 필드 -->
+                      <label for="customEmailDomain"></label><input type="text" name="customEmailDomain" class="form-control" id="customEmailDomain" style="display: none;" placeholder="직접 입력" />
+                      <button class="btn btn-outline-secondary" type="button" onclick="validateEmailAccount()">v</button>
+                      <div class="invalid-feedback">이메일 주소를 입력해주세요!</div>
+                    </div>
+                    <small id="emailValidationMsg" class="text-danger"></small>
+                  </div>
+
+                  <div class="col-12">
+                    <label for="yourUsername" class="form-label">계정</label>
+                    <div class="input-group">
+                      <input type="text" name="id" class="form-control" id="yourUsername" th:value="${member?.username}" required>
+                      <button class="btn btn-outline-secondary" type="button" onclick="validateId()">v</button>
+                      <div class="invalid-feedback">계정을 입력해주세요!</div>
+                    </div>
+                    <small id="idValidationMsg" class="text-danger"></small>
+                  </div>
+
+                  <div class="col-12">
+                    <label for="yourPassword" class="form-label">암호</label>
+                    <div class="input-group">
+                      <input type="password" name="password" class="form-control" id="yourPassword" th:value="${member?.password}" required>
+                      <button class="btn btn-outline-secondary" type="button" onclick="validatePassword()">v</button>
+                      <div class="invalid-feedback">비밀번호를 입력해주세요!</div>
+                    </div>
+                    <small id="passwordValidationMsg" class="text-danger"></small>
+                  </div>
+
+                  <div class="col-12">
+                    <label for="confirmPassword" class="form-label">비밀번호 확인</label>
+                    <div class="input-group">
+                      <input type="password" name="confirmPassword" class="form-control" id="confirmPassword" required>
+                      <button class="btn btn-outline-secondary" type="button" onclick="validateConfirmPassword()">v</button>
+                      <div class="invalid-feedback">비밀번호 확인을 입력해주세요!</div>
+                    </div>
+                    <small id="confirmPasswordValidationMsg" class="text-danger"></small>
+                  </div>
+
+
+                  <div class="col-12">
+                    <div class="form-check">
+                      <input class="form-check-input" name="agreedToTerms" type="checkbox" value="true" id="acceptTerms" required>
+                      <label class="form-check-label" for="acceptTerms">
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#termsModal">이용약관</a>에 동의합니다.
+                      </label>
+                      <div class="invalid-feedback">동의해야 합니다.</div>
+                    </div>
+                  </div>
+
+                  <div class="col-12">
+                    <div class="form-check">
+                      <input class="form-check-input" name="agreedToCollections" type="checkbox" value="true" id="acceptCollections" required>
+                      <label class="form-check-label" for="acceptCollections">
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#collectionsModal">개인정보 수집 및 이용</a>에 동의합니다.
+                      </label>
+                      <div class="invalid-feedback">동의해야 합니다.</div>
+                    </div>
+                  </div>
+
+
+                  <div class="col-12">
+                    <button class="btn btn-primary w-100" type="submit">Create Account</button>
+                  </div>
+                  <div class="col-12">
+                    <p class="small mb-0">이미 계정이 있나요? <a href="../non-member/pages-login">로그인</a></p>
+                  </div>
+                </form>
+
+                <!-- 모달 (이용약관 팝업창) -->
+                <div class="modal fade" id="termsModal" tabindex="-1" aria-labelledby="termsModalLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="termsModalLabel">이용약관</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body" id="terms-content" style="max-height: 400px; overflow-y: auto; white-space: pre-wrap;">
+                        <!-- 여기에 이용약관 내용이 동적으로 로드됩니다 -->
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- 개인정보 수집 및 이용 모달 -->
+            <div class="modal fade" id="collectionsModal" tabindex="-1" aria-labelledby="collectionsModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="collectionsModalLabel">개인정보 수집 및 이용</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body" id="collections-content" style="max-height: 400px; overflow-y: auto; white-space: pre-wrap;">
+                    <!-- 여기에 개인정보 수집 및 이용 내용이 동적으로 로드됩니다 -->
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="credits">
+              Functionality developed by Y
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+</main><!-- End #main -->
+
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+<!-- Vendor-js -->
+<div th:replace="~{fragments/vendor-js.html::fragment-vendor-js}"></div>
+
+<!-- Template Main JS File -->
+<script th:src="@{../assets/js/main.js}"></script>
+
+<script th:src="@{../assets/js/register.js}"></script>
+
+</body>
+
+</html>

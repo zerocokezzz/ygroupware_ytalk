@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<!-- head -->
+<head>
+    <title>Talk</title>
+    <th:block th:replace="~{fragments/head.html :: fragment-head}"></th:block>
+    <style>
+        img{ max-width:100%;}
+    </style>
+</head>
+
+<body>
+
+<!-- header -->
+<div th:replace="~{fragments/header.html::fragment-header}"></div>
+
+<!-- aside -->
+<div th:replace="~{fragments/aside-talk.html::fragment-aside-talk}"></div>
+
+<main id="main" class="main">
+    <section class="section">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card-body">
+                    <div id="dynamic-content">
+                        <div id="initial-message" class="initial-message text-center">
+                            <img th:src="@{../assets/img/sms-5320930_1280.jpg}" alt="Chat Placeholder" class="placeholder-img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <input type="hidden" id="currentUserId" th:value="${currentUserId}">
+</main><!-- End #main -->
+
+<!-- footer -->
+<div th:replace="~{fragments/footer.html::fragment-footer}"></div>
+
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+<!-- Vendor-js -->
+<div th:replace="~{fragments/vendor-js.html::fragment-vendor-js}"></div>
+
+<!-- Template Main JS File -->
+<script th:src="@{../assets/js/main.js}"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.5.2/sockjs.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+
+<!-- External JavaScript -->
+<script th:src="@{../assets/js/chat.js}"></script>
+
+</body>
+</html>

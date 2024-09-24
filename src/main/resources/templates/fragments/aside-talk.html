@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!-- ======= Sidebar ======= -->
+<aside th:fragment="fragment-aside-talk" id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" data-bs-target="#talk-list-nav" data-bs-toggle="collapse" href="#">
+                <i class="bi bi-chat-dots-fill"></i>
+                <span>메시지</span>
+                <i class="bi bi-chevron-down ms-auto"></i>
+            </a>
+            <ul id="talk-list-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+            </ul>
+        </li><!-- talk-list-nav end -->
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" data-bs-target="#partner-list-nav" data-bs-toggle="collapse" href="#">
+                <i class="bi bi-person-lines-fill"></i>
+                <span>주소록</span>
+                <i class="bi bi-chevron-down ms-auto"></i>
+            </a>
+            <ul id="partner-list-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+            </ul>
+        </li><!-- partner-list-nav end -->
+
+        <li class="nav-item" id="btn-back">
+            <a class="nav-link collapsed" href="/">
+                <i class="bi bi-arrow-left-square"></i>
+            </a>
+        </li><!-- End Blank Page Nav -->
+
+    </ul>
+
+</aside><!-- End Sidebar-->
+</html>
