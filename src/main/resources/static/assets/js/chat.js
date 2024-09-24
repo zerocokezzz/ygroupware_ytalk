@@ -150,7 +150,7 @@ function connect(chatRoomId, callback) {
     const socket = new SockJS('/gs-guide-websocket');
     stompClient = Stomp.over(socket);
 
-    stompClient.connect({}, frame => {
+    stompClient.connect({}, _ => {
         reconnectAttempts = 0;
         stompClient.subscribe('/topic/chat-room/' + chatRoomId, messageOutput => {
             const message = JSON.parse(messageOutput.body);
@@ -158,7 +158,7 @@ function connect(chatRoomId, callback) {
         });
         if (callback) callback();
     }, error => {
-        handleConnectionError();
+        console.error('WebSocket 연결 실패: ', error);
     });
 }
 

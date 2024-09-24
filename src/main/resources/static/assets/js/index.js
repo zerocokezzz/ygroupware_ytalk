@@ -5,7 +5,7 @@ function connectForNotifications() {
     const socket = new SockJS('/gs-guide-websocket');
     stompClient = Stomp.over(socket);
 
-    stompClient.connect({}, function (frame) {
+    stompClient.connect({}, _ => {
         stompClient.subscribe('/topic/notifications', function (message) {
             const notification = JSON.parse(message.body);
             addNotification(notification);
