@@ -365,10 +365,21 @@ function exitChatRoom() {
             alert(data.message);
             document.getElementById('dynamic-content').innerHTML = '';
             reloadChatRooms();
-            showInitialMessage();
+
+            fetch('/talk/chat-rooms')
+                .then(response => response.json())
+                .then(chatRooms => {
+                    if (chatRooms.length === 0) {
+                        window.location.href = "/talk/talk-index";
+                    } else {
+                        showInitialMessage();
+                    }
+                })
+                .catch(error => console.error('대화방 로드 중 오류:', error));
         })
         .catch(error => console.error('대화방 나가기 중 오류 발생:', error));
 }
+
 
 function showInitialMessage() {
     const dynamicContent = document.getElementById('dynamic-content');
