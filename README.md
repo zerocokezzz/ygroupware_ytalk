@@ -16,30 +16,6 @@
 - **인원:** 개발자 1명
 - [🌐 배포 링크](https://ytalk.azurewebsites.net)
 
-## ERD 구조
-
-## 기술 스택
-
-<img width="80%" src="![java](https://github.com/user-attachments/assets/6d6b94d4-0081-4590-b95d-b82505fb6f70)"/>
-
-<img src="![springboot.jpg](https://prod-files-secure.s3.us-west-2.amazonaws.com/8404a52b-c953-4172-a95f-8296b68f0606/fd4279fd-95e8-4706-981a-1b162e76d696/springboot.jpg)">
-
-<img src="![security.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/8404a52b-c953-4172-a95f-8296b68f0606/60a5b301-d2eb-4c1d-93b1-9a149834e0ea/security.png)">
-
-<img src="![springframewok.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/8404a52b-c953-4172-a95f-8296b68f0606/e6fe0c17-ea4e-4d11-ba61-2a283d304335/springframewok.png)">
-
-<img src="![gradle.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/8404a52b-c953-4172-a95f-8296b68f0606/4bddf815-71c7-4e3d-a2bd-7a6344bb92c1/gradle.png)">
-
-<img src="![springjpa.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/8404a52b-c953-4172-a95f-8296b68f0606/4a4608ec-fd61-4dff-95f1-276cc5cfb724/springjpa.png)">
-
-<img src="![postgreesql.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/8404a52b-c953-4172-a95f-8296b68f0606/d16f8de9-4e20-4f11-a4cc-ebb05a12b567/postgreesql.png)">
-
-<img src="![thymeleaf.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/8404a52b-c953-4172-a95f-8296b68f0606/6cf21893-3fbe-4489-9b80-8994f329ffa6/thymeleaf.png)">
-
-<img src="![github.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/8404a52b-c953-4172-a95f-8296b68f0606/a9d66c03-281d-4be5-87d3-f1112d4d3285/github.png)">
-
-<img src="![cloudtype.jpg](https://prod-files-secure.s3.us-west-2.amazonaws.com/8404a52b-c953-4172-a95f-8296b68f0606/81a4ed0c-8284-48fe-89c3-2d74c3caf6c6/cloudtype.jpg)">
-
 ## 주요 기능
 
 - **회원가입**: 사용자는 새로운 계정을 등록할 수 있으며, 중복된 이메일 또는 아이디를 방지하기 위한 유효성 검사를 포함합니다.
