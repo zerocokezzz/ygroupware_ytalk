@@ -32,7 +32,6 @@ function addNotification(notification) {
     <li><hr class="dropdown-divider"></li>
   `;
 
-    const footer = document.querySelector('.dropdown-footer');
     notificationList.insertAdjacentHTML('afterbegin', newNotification);
 
     updateBadgeCount();
@@ -59,7 +58,6 @@ function fetchUnreadMessages() {
     fetch('/chat-room/unread-messages')
         .then(response => response.json())
         .then(messages => {
-            const notificationList = document.querySelector('.dropdown-menu.messages');
             clearNotificationItems();
 
             messages.forEach(message => {
