@@ -6,11 +6,8 @@ function connectForNotifications() {
     stompClient = Stomp.over(socket);
 
     stompClient.connect({}, function (frame) {
-        console.log('Connected for notifications: ' + frame);
-
         stompClient.subscribe('/topic/notifications', function (message) {
             const notification = JSON.parse(message.body);
-            console.log('알림 수신: ', notification);
             addNotification(notification);
         });
     }, function (error) {

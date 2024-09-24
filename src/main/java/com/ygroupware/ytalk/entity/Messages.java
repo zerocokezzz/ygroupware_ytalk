@@ -48,12 +48,4 @@ public class Messages {
     @Column(name = "is_deleted")
     private boolean isDeleted;
 
-    @Column(name = "reply_to_message_id")
-    private String replyToMessageId;
-    private String attachment;
-
-    @Column(name = "message_type")
-    private String messageType;
-    private String status;
-
 }

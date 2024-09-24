@@ -7,12 +7,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const isValid = await validateForm();
         if (!isValid) {
-            console.log("Form submission blocked due to validation failure.");
             return; // 유효하지 않으면 폼을 중단하고 더 이상 진행하지 않음
         }
 
-        // 유효한 경우에만 폼 제출을 계속 진행
-        console.log("Form is valid. Submitting...");
         form.submit(); // 유효할 경우 수동으로 폼 제출
     });
 

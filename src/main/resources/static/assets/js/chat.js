@@ -143,7 +143,6 @@ const reconnectInterval = 5000;
 
 function connect(chatRoomId, callback) {
     if (stompClient && stompClient.connected) {
-        console.log('WebSocket already connected');
         if (callback) callback();
         return;
     }
@@ -152,16 +151,13 @@ function connect(chatRoomId, callback) {
     stompClient = Stomp.over(socket);
 
     stompClient.connect({}, frame => {
-        console.log('Connected: ' + frame);
         reconnectAttempts = 0;
         stompClient.subscribe('/topic/chat-room/' + chatRoomId, messageOutput => {
             const message = JSON.parse(messageOutput.body);
-            console.log("메시지 수신:", message);
             showMessage(message);
         });
         if (callback) callback();
     }, error => {
-        console.log('WebSocket connection error: ' + error);
         handleConnectionError();
     });
 }
@@ -169,7 +165,6 @@ function connect(chatRoomId, callback) {
 function handleConnectionError() {
     if (reconnectAttempts < maxReconnectAttempts) {
         reconnectAttempts++;
-        console.log(`재연결 시도 ${reconnectAttempts}/${maxReconnectAttempts}`);
         setTimeout(() => {
             connect(currentChatRoomId, () => loadChatRoomMessages(currentChatRoomId));
         }, reconnectInterval);
