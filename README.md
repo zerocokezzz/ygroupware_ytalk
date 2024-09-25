@@ -57,14 +57,13 @@
 
 | 순서 | 설명 |
 | --- | --- |
-| 1. 회원가입  | 메신저 서비스를 이용하기 위한 첫 단계입니다.  |
-| 2. 로그인 | 등록된 계정으로 YGroupWare에 접속합니다. |
-| 3. 대화방 만들기 및 메시지 보내기 | 새로운 대화를 시작하고 메시지를 주고받습니다. |
-| 4. 알림 메시지 및 나가기 | 알림 설정 및 대화방 나가기 기능을 사용합니다. |
-| 5. 로그아웃 | 로그아웃 기능을 사용하여 안전하게 서비스를 종료합니다. |
-| 6. 자동로그인 | 자동 로그인 기능은 사용자의 편의를 위해 제공되는 옵션입니다. |
-
-
-https://github.com/user-attachments/assets/4838bcf6-f79f-49eb-be64-77ec444eeb19
-
+| 1. 회원가입  | 2. 로그인  |
+| 메신저 서비스를 이용하기 위한 첫 단계입니다. | 등록된 계정으로 YGroupWare에 접속합니다. |
+| ![ytalk_회원가입](https://github.com/user-attachments/assets/a1ad9cf7-7d48-409d-bcce-8b8634bc2fce) | ![ytalk_로그인](https://github.com/user-attachments/assets/c014530f-4a13-4e59-812f-fa60afc80230) |
+| 3. 대화방 만들기 및 메시지 보내기 | 4. 알림 메시지 및 나가기 |
+| 새로운 대화를 시작하고 메시지를 주고받습니다. | 알림 설정 및 대화방 나가기 기능을 사용합니다. |
+| ![ytalk_대화방만들고메시지보내기](https://github.com/user-attachments/assets/afd3ea9d-20e0-4f69-a46d-1184f851aae2) | ![ytalk_알림메시지나가기](https://github.com/user-attachments/assets/201a23ff-698d-475c-a2ae-0c1d5a377b28) |
+| 5. 로그아웃 | 6. 자동로그인 |
+| 자동 로그인 기능은 사용자의 편의를 위해 제공되는 옵션입니다. | 로그아웃 기능을 사용하여 안전하게 서비스를 종료합니다. |
+| ![ytalk_로그아웃](https://github.com/user-attachments/assets/5198eac4-a16d-49f3-a82e-ca9167fe9621) | ![ytalk_자동로그인](https://github.com/user-attachments/assets/91d8e94a-ca31-41cb-961a-37bf9e1f819e) |
 
