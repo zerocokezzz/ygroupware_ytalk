@@ -55,9 +55,8 @@
 
 ## 메신저 사용 가이드
 
-| 순서 | 설명 |
+| 1. 회원가입 | 2. 로그인 |
 | --- | --- |
-| 1. 회원가입  | 2. 로그인  |
 | 메신저 서비스를 이용하기 위한 첫 단계입니다. | 등록된 계정으로 YGroupWare에 접속합니다. |
 | ![ytalk_회원가입](https://github.com/user-attachments/assets/a1ad9cf7-7d48-409d-bcce-8b8634bc2fce) | ![ytalk_로그인](https://github.com/user-attachments/assets/c014530f-4a13-4e59-812f-fa60afc80230) |
 | 3. 대화방 만들기 및 메시지 보내기 | 4. 알림 메시지 및 나가기 |
